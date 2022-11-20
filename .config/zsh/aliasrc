@@ -37,4 +37,4 @@ alias lt='ls -ltFh --color' # sorted by date
 alias crload='source ~/.zshrc'
 
 # git bare for config management
-alias dconfig='/usr/bin/git --git-dir=/home/staub/.git-bare-dotfiles --work-tree=$HOME'
+alias dconfig='/usr/bin/git --git-dir=$HOME/.git-bare-dotfiles --work-tree=$HOME'
