@@ -1,5 +1,5 @@
-# nice functions
-# ! stolen from  
+# nice to have functions
+# ! stolen from https://github.com/ChrisTitusTech/zsh/blob/master/aliasrc
 # # ex - archive extractor
 # # usage: ex <file>
 ex ()
