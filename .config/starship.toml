@@ -9,7 +9,14 @@ $directory\
 [](fg:#33658A)\
 $git_branch\
 $git_status\
-$all
+$all\
+$fill\
+$cmd_duration\
+$line_break\
+$status\
+$container\
+$shell\
+$character\
 """
 
 # Inserts a blank line between shell prompts
@@ -41,6 +48,7 @@ format = '([\[$all_status$ahead_behind\]]($style) ) '
 
 [cmd_duration]
 min_time = 15_000
+format = " took [$duration]($style)"
 
 [status]
 disabled = false
@@ -55,4 +63,5 @@ format = "[$symbol  $status]($style) "
 [package]
 disabled = true
 
-
+[fill]
+symbol = " "
