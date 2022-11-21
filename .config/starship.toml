@@ -11,13 +11,14 @@ $git_branch\
 $git_status\
 $all\
 $fill\
+$status\
 $cmd_duration\
 $line_break\
-$status\
 $container\
 $shell\
 $character\
 """
+
 
 # Inserts a blank line between shell prompts
 add_newline = true
@@ -28,7 +29,7 @@ disabled = false
 [directory]
 style = "bold bg:#33658A"
 read_only_style = "bg:#33658A"
-format = "[ $path ]($style)[$read_only]($read_only_style)"
+format = "[  $path ]($style)[$read_only]($read_only_style)"
 truncation_length = 4
 truncation_symbol = "…/"
 
@@ -42,13 +43,12 @@ truncation_symbol = "…/"
 symbol = ""
 format = ' \[[$symbol $branch]($style)\]'
 
-
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) ) '
 
 [cmd_duration]
 min_time = 15_000
-format = " took [$duration]($style)"
+format = "took [$duration]($style)"
 
 [status]
 disabled = false
