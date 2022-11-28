@@ -41,3 +41,7 @@ alias dconfig='/usr/bin/git --git-dir=$HOME/.git-bare-dotfiles --work-tree=$HOME
 
 # path
 alias getpath='realpath'
+
+# dont accidentally delete files
+alias rm='rm -i'
+alias mv='mv -i'
