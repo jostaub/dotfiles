@@ -31,6 +31,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # disable beep
 unsetopt BEEP
 
+# ssh-agent
+source ~/.config/zsh/ssh-agent
+
 # aliases
 source ~/.config/zsh/aliasrc 
 
