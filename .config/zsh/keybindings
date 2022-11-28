@@ -1,0 +1,7 @@
+
+# move word with str + left/right
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# delete work with str + delete
+bindkey "^H" backward-kill-word

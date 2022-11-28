@@ -38,3 +38,6 @@ alias crload='source ~/.zshrc'
 
 # git bare for config management
 alias dconfig='/usr/bin/git --git-dir=$HOME/.git-bare-dotfiles --work-tree=$HOME'
+
+# path
+alias getpath='realpath'

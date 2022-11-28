@@ -34,8 +34,10 @@ unsetopt BEEP
 # ssh-agent
 source ~/.config/zsh/ssh-agent
 
-# aliases
+# aliases + keybindings
+source ~/.config/zsh/keybindings
 source ~/.config/zsh/aliasrc 
+
 
 # plugin
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
