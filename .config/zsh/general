@@ -1,0 +1,3 @@
+
+# update path
+[ -d "/snap/bin" ] && export PATH=$PATH:/snap/bin
