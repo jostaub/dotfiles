@@ -33,3 +33,4 @@ unsetopt BEEP
 
 # update path
 [ -d "/snap/bin" ] && export PATH=$PATH:/snap/bin
+[ -d "$HOME/.cargo" ] && export PATH="$HOME/.cargo/bin:$PATH"
