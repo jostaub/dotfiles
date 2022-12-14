@@ -13,6 +13,9 @@ set showmode     " Show current mode
 set visualbell   " No sound
 set hidden       " Allow buffers to be hidden
 
+" enable mouse
+set mouse=a
+
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " visual stuff
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -56,3 +59,4 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
+
