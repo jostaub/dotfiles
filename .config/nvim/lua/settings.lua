@@ -3,9 +3,13 @@
 local g = vim.g
 local o = vim.o
 
+-- general
+o.mouse = "a"
+o.syntax = "enable"
+
 -- Decrease update time
 o.timeoutlen = 500
-o.updatetime = 200
+o.updatetime = 750
 
 -- Better UI
 o.number = true
