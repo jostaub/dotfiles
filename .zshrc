@@ -8,6 +8,8 @@ source ~/.config/zsh/ssh-agent
 source ~/.config/zsh/keybindings
 source ~/.config/zsh/aliasrc 
 
+# load device specific config
+[ -f "~/.config/zsh/device_specific" ] && source ~/.config/zsh/device_specific
 
 # plugin
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
