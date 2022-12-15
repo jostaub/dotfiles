@@ -6,7 +6,7 @@ format = """
 $username\
 [](bg:#33658A fg:#DA627D))\
 $directory\
-[](fg:#33658A)\
+[](fg:#33658A) \
 $git_branch\
 $git_status\
 $all\
