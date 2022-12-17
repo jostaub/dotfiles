@@ -15,7 +15,9 @@ end
 
 -- Plugins that are always loaded
 Plug("justinmk/vim-sneak")
-require('conf-vim-sneak')
+require('plugins/conf-vim-sneak')
 
+Plug("unblevable/quick-scope")
+require('plugins/conf-quick-scope')
 
 vim.call("plug#end")
