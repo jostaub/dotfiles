@@ -5,9 +5,6 @@ set nocompatible
 " general
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-" disable annoying bell
-set belloff=all
-
 set showcmd      " Show incomplete cmds
 set showmode     " Show current mode
 set visualbell   " No sound
@@ -15,6 +12,7 @@ set hidden       " Allow buffers to be hidden
 
 " enable mouse
 set mouse=a
+set clipboard=unnamedplus   " Copy paste between vim and everything else
 
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " visual stuff
@@ -39,6 +37,9 @@ syntax enable
 set number
 set nuw=4
 
+" Enable highlighting of the current linec
+set cursorline
+
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " text, tab indent related
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -59,4 +60,15 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
+
+" shortcuts
+nnoremap ^[j :m .+1<CR>==
+nnoremap ^[k :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+
+
 
