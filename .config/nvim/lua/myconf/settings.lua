@@ -15,8 +15,9 @@ o.updatetime = 750
 o.number = true
 o.relativenumber = true
 o.cursorline = true
+o.termguicolors = true
 
--- editing stuff
+-- Tab stuff
 o.expandtab = true
 o.smarttab = true
 o.tabstop = 4
@@ -26,6 +27,8 @@ o.softtabstop = -1 -- If negative, shiftwidth value is used
 -- Makes neovim and host OS clipboard play nicely with each other
 o.clipboard = 'unnamedplus'
 
+vim.opt.incsearch = true
+
 -- Case insensitive searching UNLESS /C or capital in search
 o.ignorecase = true
 o.smartcase = true
@@ -33,3 +36,6 @@ o.smartcase = true
 -- Map <leader> to space
 g.mapleader = ' '
 g.maplocalleader = ' '
+
+-- Try to keep x lines above and below cursor while scrolling
+o.scrolloff = 4
