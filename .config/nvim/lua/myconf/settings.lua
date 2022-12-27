@@ -8,7 +8,7 @@ o.mouse = "a"
 o.syntax = "enable"
 
 -- Decrease update time
-o.timeoutlen = 500
+-- o.timeoutlen = 500
 o.updatetime = 750
 
 -- Better UI
