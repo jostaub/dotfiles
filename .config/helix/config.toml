@@ -1,0 +1,26 @@
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+mouse = true
+auto-pairs = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-s = ":w"
+C-c = "no_op"
+C-7 = "toggle_comments"
+
+[keys.insert]
+C-c = "normal_mode"
+C-s = ":w"
+
+# str + left and right word movment in insert mode
+C-left = "move_prev_word_start"
+C-right = "move_next_word_start"
