@@ -1,0 +1,5 @@
+# bind ctr + space to accept autosuggestions
+bindkey '^ ' autosuggest-accept
+
+# bin ctr + enter to execute autosuggestions
+bindkey '^J' autosuggest-execute
