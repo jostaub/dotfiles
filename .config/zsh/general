@@ -34,6 +34,13 @@ unsetopt BEEP
 # enable true color
 export COLORTERM="truecolor"
 
+# set editor
+export EDITOR=vim
+
+# still use emacs-style zsh bindings
+# see: https://superuser.com/questions/403355/how-do-i-get-searching-through-my-command-history-working-with-tmux-and-zshell
+bindkey -e
+
 # update path
 [ -d "/snap/bin" ] && export PATH=$PATH:/snap/bin
 [ -d "$HOME/.cargo" ] && export PATH="$HOME/.cargo/bin:$PATH"

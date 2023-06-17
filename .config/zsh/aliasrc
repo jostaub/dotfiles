@@ -25,9 +25,6 @@ ex ()
   fi
 }
 
-# general stuff
-export EDITOR=vim
-
 # ls aliases
 alias ls='ls --color'
 alias ll='ls -lAFh --color'
