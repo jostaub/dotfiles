@@ -396,7 +396,6 @@ cmp.setup {
   },
 }
 
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<cr>', {silent = true, desc = 'Toggle Neotree' })
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`

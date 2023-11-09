@@ -7,6 +7,9 @@ return {
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
+    keys = {
+      { '<leader>ft', ':Neotree toggle<cr>', {silent = true, desc = 'Toggle Neotree' }},
+    },
     opts = {
         enable_git_status = true,
         filesystem = {
@@ -20,6 +23,7 @@ return {
           },
         },
         window = {
+          -- mapping space in neotree to none because its my leader key
           mappings = {
             ["<space>"] = "none",
           },
