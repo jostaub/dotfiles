@@ -1,3 +1,12 @@
+# download plugins
+if [ ! -d "$HOME/.config/zsh/plugins/zsh-autosuggestions" ]; then
+    git clone git@github.com:zsh-users/zsh-autosuggestions.git ~/.config/zsh/plugins/zsh-autosuggestions
+fi
+
+if [ ! -d "$HOME/.config/zsh/plugins/zsh-syntax-highlighting" ]; then
+    git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
+fi
+
 # general stuff
 source ~/.config/zsh/general
 
