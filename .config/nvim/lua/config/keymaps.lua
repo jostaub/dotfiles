@@ -22,6 +22,9 @@ vim.keymap.set('i', '<C-S>', '<CMD>update<CR>')
 -- Quit shortcut
 vim.keymap.set('n', '<leader>q', '<CMD>quit<CR>', { desc = 'Quit' })
 
+-- my prefered way to delete a word quickly
+vim.keymap.set('i', '<C-H>', '<C-w>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })

@@ -68,6 +68,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- :help backspace (allow backspace over everything)
+vim.opt.backspace = { 'indent', 'eol', 'start' }
+
 -- Diagnostics
 vim.diagnostic.config {
   underline = false,

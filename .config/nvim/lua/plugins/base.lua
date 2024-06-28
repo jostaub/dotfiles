@@ -309,6 +309,12 @@ return {
         servers = lsp_servers_overrides()
       end
 
+      -- install autoformatters with mason
+      local autoformatters = {
+        'prettier',
+        'ruff',
+      }
+
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -323,6 +329,8 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
       })
+      vim.list_extend(ensure_installed, autoformatters)
+      print(vim.inspect(ensure_installed))
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
@@ -365,14 +373,24 @@ return {
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+      formatters = {
+        -- yamlfix = {
+        --   env = {
+        --     -- https://lyz-code.github.io/yamlfix/#configuration-options
+        --     YAMLFIX_WHITELINES = '1',
+        --     YAMLFIX_SEQUENCE_STYLE = 'keep_style',
+        --     YAMLFIX_QUOTE_REPRESENTATION = '"',
+        --   },
+        -- },
+      },
+
       formatters_by_ft = {
         lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        python = { 'ruff_organize_imports', 'ruff_format' },
+        go = { 'gofmt' },
+        javascript = { 'prettier' },
+        yaml = { 'prettier' },
+        ['yaml.ansible'] = { 'prettier' },
       },
     },
   },
@@ -488,22 +506,13 @@ return {
     end,
   },
 
-  {
-    'abecodes/tabout.nvim',
-    -- if i have tab problems with cmd or luasnip look at https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
-    lazy = false,
-    config = function()
-      require('tabout').setup {
-        enable_backwards = false,
-      }
-    end,
-    dependencies = { -- These are optional
-      'nvim-treesitter/nvim-treesitter',
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/nvim-cmp',
+  { -- i use this over abecodes/tabout.nvim because it is more consistent
+    -- if often had the problem where i could not tabout or jumped to a wrong location e.g. in the middel of the next word
+    'kawre/neotab.nvim',
+    event = 'InsertEnter',
+    opts = {
+      ignore_beginning = true,
     },
-    event = 'InsertCharPre', -- Set the event to 'InsertCharPre' for better compatibility
-    priority = 1000,
   },
 
   { -- Collection of various small independent plugins/modules
