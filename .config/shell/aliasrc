@@ -26,7 +26,7 @@ ex ()
 }
 
 # ls aliases
-alias ls='ls --color'
+alias ls='ls -l --color'
 alias ll='ls -lAFh --color'
 alias lt='ls -ltFh --color' # sorted by date
 

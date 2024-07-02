@@ -330,7 +330,7 @@ return {
         'stylua', -- Used to format Lua code
       })
       vim.list_extend(ensure_installed, autoformatters)
-      print(vim.inspect(ensure_installed))
+
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
@@ -395,6 +395,15 @@ return {
     },
   },
 
+  { -- i use this over abecodes/tabout.nvim because it is more consistent
+    -- if often had the problem where i could not tabout or jumped to a wrong location e.g. in the middel of the next word
+    'kawre/neotab.nvim',
+    event = 'InsertEnter',
+    opts = {
+      ignore_beginning = true,
+    },
+  },
+
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -415,12 +424,13 @@ return {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+              require('luasnip.loaders.from_vscode').lazy_load { paths = { '~/.config/nvim/vscode-snippets' } }
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
@@ -435,6 +445,7 @@ return {
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local neotab = require 'neotab'
       luasnip.config.setup {}
 
       cmp.setup {
@@ -459,22 +470,20 @@ return {
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
-          -- Accept ([i]sert) the completion.
-          --  This will auto-import if your LSP supports it.
-          --  This will expand snippets if the LSP sent a snippet.
-          ['<C-i>'] = cmp.mapping.confirm { select = true },
-
-          -- If you prefer more traditional completion keymaps,
-          -- you can uncomment the following lines
-          --['<CR>'] = cmp.mapping.confirm { select = true },
-          --['<Tab>'] = cmp.mapping.select_next_item(),
-          --['<S-Tab>'] = cmp.mapping.select_prev_item(),
+          -- Confirm selection
+          ['<C-Enter>'] = cmp.mapping.confirm { select = true },
 
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
           --  completions whenever it has completion options available.
-          ['<C-Space>'] = cmp.mapping.complete {},
-
+          -- ['<C-Space>'] = cmp.mapping.complete {},
+          ['<C-Space>'] = cmp.mapping(function()
+            if cmp.visible() then
+              cmp.abort()
+            else
+              cmp.complete {}
+            end
+          end, { 'i', 's' }),
           -- Think of <c-l> as moving to the right of your snippet expansion.
           --  So if you have a snippet that's like:
           --  function $name($args)
@@ -504,15 +513,6 @@ return {
         },
       }
     end,
-  },
-
-  { -- i use this over abecodes/tabout.nvim because it is more consistent
-    -- if often had the problem where i could not tabout or jumped to a wrong location e.g. in the middel of the next word
-    'kawre/neotab.nvim',
-    event = 'InsertEnter',
-    opts = {
-      ignore_beginning = true,
-    },
   },
 
   { -- Collection of various small independent plugins/modules

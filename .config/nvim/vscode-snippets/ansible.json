@@ -1,0 +1,26 @@
+{
+    "test": {
+        "prefix": "test",
+        "body": "<!Testing html>\n",
+        "description": "HTML - 5.0 (doctype)"
+    },
+    "Ansible name": {
+      "prefix": "name",
+      "body": [
+        "- name: ${1:name}"
+      ],
+      "description": "Simple Ansible task"
+    },
+  "Playbook template": {
+    "prefix": "playbook",
+    "body": [
+      "---",
+      "- name: ${2:Playbook}",
+      "  hosts: ${1:hosts}",
+      "",
+      "  tasks:",
+      "${0:hosts}"
+    ],
+    "description": "Playbook template"
+  }
+}

@@ -9,13 +9,14 @@ fi
 
 # general stuff
 source ~/.config/zsh/general
+source ~/.config/shell/exports
 
 # ssh-agent
 source ~/.config/zsh/ssh-agent
 
 # aliases + keybindings
 source ~/.config/zsh/keybindings
-source ~/.config/zsh/aliasrc 
+source ~/.config/shell/aliasrc 
 
 # load device specific config
 [ -f "~/.config/zsh/device_specific" ] && source ~/.config/zsh/device_specific
@@ -28,5 +29,6 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/plugin-config
 
 # init starship
-eval "$(starship init zsh)"
-
+if [ -f ~/.local/bin/starship ]; then
+  eval "$(starship init zsh)"
+fi

@@ -1,0 +1,5 @@
+# source my zsh aliases
+source ~/.config/shell/aliasrc
+
+# reload
+alias crload='source ~/.bashrc'

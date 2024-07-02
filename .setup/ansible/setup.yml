@@ -1,0 +1,49 @@
+---
+- name: Setup current host/user for my dotfiles
+  hosts: localhost
+  vars:
+    ansible_connection: local
+
+  tasks:
+    - name: Install basic req.
+      ansible.builtin.package:
+        name:
+          - git
+        state: present
+      become: true
+
+    - name: Install bash
+      ansible.builtin.package:
+        name:
+          - bash
+          - bash-completion
+        state: present
+      tags:
+        - bash
+      become: true
+
+    - name: Install zsh
+      ansible.builtin.package:
+        name:
+          - zsh
+        state: present
+      tags:
+        - zsh
+        - never
+      become: true
+
+    - name: Download FiraMono Nerdfont
+      ansible.builtin.get_url:
+        url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraMono.zip
+        dest: /tmp/FiraMono.zip
+        mode: "0440"
+
+    - name: Check if starship promt is installed
+      ansible.builtin.stat:
+        path: ~/.local/bin/starship
+      register: starship
+
+    - name: Install starship prompt
+      ansible.builtin.shell:
+        cmd: set -o pipefail && curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir ~/.local/bin/ -f
+      when: not starship.stat.exists

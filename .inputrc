@@ -1,0 +1,12 @@
+# no bell on multiple completions
+set show-all-if-ambiguous on 
+set bell-style none
+
+# theat szmlinked direcotries like direcotries in tab completions
+set mark-symlinked-directories on
+
+# colors when tab completing files
+set colored-stats on
+
+# ignore case in autocompletion
+set completion-ignore-case On

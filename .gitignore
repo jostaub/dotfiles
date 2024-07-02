@@ -1,1 +1,21 @@
-lazy-lock.json
+#
+# Exclude all files since this git repo normaly would track all files in home
+#
+
+.git-bare-dotfiles
+/*
+
+!.gitignore
+!.bashrc
+!.zshrc
+!.inputrc
+
+# the parent direcotry of files that should be included cannot be ignored otherwise the exclude (!) on subdirecories wont work
+!/.config
+/.config/*
+!/.config/nvim
+!/.config/shell
+!/.config/bash
+!/.config/zsh
+
+!/.setup

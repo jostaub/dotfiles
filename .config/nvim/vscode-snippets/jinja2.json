@@ -1,0 +1,33 @@
+{
+    "Jinja for loop": {
+        "prefix": "jfor",
+        "body": [
+            "{% for $1 in $2 %}",
+            "\t$3",
+            "{% endfor %}$0"
+        ],
+        "description": "Jinja for loop"
+    },
+
+    "Jinja if": {
+        "prefix": "jif",
+        "body": [
+            "{% if $1 %}",
+            "\t$2",
+            "{% endif %}$0"
+        ],
+        "description": "Jinja if"
+    },
+
+    "Jinja if else": {
+        "prefix": "jifelse",
+        "body": [
+            "{% if $1 %}",
+            "\t$2",
+            "{% else %}",
+            "\t$3",
+            "{% endif %}$0"
+        ],
+        "description": "Jinja if else"
+    }
+}
