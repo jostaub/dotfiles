@@ -10,7 +10,7 @@ export EDITOR=vim
 [ -d "$HOME/.cargo" ] && export PATH="$HOME/.cargo/bin:$PATH"
 [ -d "$HOME/.local/go" ] && export PATH="$HOME/.local/go/bin:$PATH"
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
-[ -d "$HOME/nvim-linux" ] && export PATH="$HOME/nvim-linux64/bin:$PATH"
+[ -d "$HOME/nvim-linux64" ] && export PATH="$HOME/nvim-linux64/bin:$PATH"
 
 # setup pyenv if installed
 if [ -d "$HOME/.pyenv" ]

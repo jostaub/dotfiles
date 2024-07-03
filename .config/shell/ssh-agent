@@ -9,7 +9,6 @@ function start_agent {
 }
 
 # Source SSH settings, if applicable
-
 if [ -f "${SSH_ENV}" ]; then
      . "${SSH_ENV}" > /dev/null
      #ps ${SSH_AGENT_PID} doesn't work under cywgin
@@ -19,14 +18,3 @@ if [ -f "${SSH_ENV}" ]; then
 else
      start_agent;
 fi
-
-# clear ssh agents if no ssh zsh shell is open
-function clear_ssh_agent {
-    LINES=$(pgrep zsh | grep -v "grep" | wc -l)
-    if [[ $LINES == 2 ]] then
-        echo "[INFO]: Removed SSH identities"
-        ssh-add -D
-    fi
-}
-
-trap clear_ssh_agent EXIT

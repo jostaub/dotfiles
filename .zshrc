@@ -12,7 +12,7 @@ source ~/.config/zsh/general
 source ~/.config/shell/exports
 
 # ssh-agent
-source ~/.config/zsh/ssh-agent
+source ~/.config/shell/ssh-agent
 
 # aliases + keybindings
 source ~/.config/zsh/keybindings

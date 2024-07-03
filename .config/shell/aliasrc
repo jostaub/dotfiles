@@ -33,11 +33,18 @@ alias lt='ls -ltFh --color' # sorted by date
 # reload
 alias crload='source ~/.zshrc'
 
+# clear ssh keys
+alias ssh-clean="ssh-add -D"
+alias ssh-add='ssh-add -t 10h'
+
 # git bare for config management
 alias dconfig='/usr/bin/git --git-dir=$HOME/.git-bare-dotfiles --work-tree=$HOME'
 
 # path
 alias getpath='realpath'
+
+# grep default case insensitive
+alias grep="grep -i"
 
 # dont accidentally delete files
 alias rm='rm -i'

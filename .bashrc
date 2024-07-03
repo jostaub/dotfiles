@@ -23,8 +23,9 @@ if [ -d ~/.config/bash ]; then
 		fi
 	done
 fi
-
 unset rc
+source "$HOME/.config/shell/ssh-agent"
+
 
 # Bash completions if installed
 if [ -f /etc/profile.d/bash_completion.sh ]; then
