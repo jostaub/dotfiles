@@ -87,25 +87,76 @@ return {
   --     vim.cmd.hi 'Comment gui=none'
   --   end,
   -- },
+  -- {
+  --   'ellisonleao/gruvbox.nvim',
+  --   priority = 1000,
+  --   config = true,
+  --   opts = {
+  --     italic = {
+  --       strings = true,
+  --       emphasis = true,
+  --       comments = true,
+  --       operators = true,
+  --       folds = false,
+  --     },
+  --     contrast = '',
+  --   },
+  --   init = function()
+  --     vim.o.background = 'dark'
+  --     vim.cmd [[colorscheme gruvbox]]
+  --   end,
+  -- },
   {
-    'ellisonleao/gruvbox.nvim',
+    'rebelot/kanagawa.nvim',
     priority = 1000,
     config = true,
     opts = {
-      italic = {
-        strings = false,
-        emphasis = false,
-        comments = false,
-        operators = false,
-        folds = false,
-      },
-      contrast = '',
+      keywordStyle = { italic = false },
+      -- colors = {
+      --   palette = {
+      --     boatYellow2 = '#DCA561',
+      --   },
+      -- },
+      overrides = function(colors) -- add/modify highlights
+        local theme = colors.theme
+        return {
+          ['@keyword.operator'] = { fg = colors.palette.autumnYellow },
+          ['@variable.builtin'] = { italic = false },
+        }
+      end,
     },
     init = function()
-      vim.o.background = 'dark'
-      vim.cmd [[colorscheme gruvbox]]
+      vim.cmd [[colorscheme kanagawa]]
     end,
   },
+  -- {
+  --   'EdenEast/nightfox.nvim',
+  --   priority = 1000,
+  --   init = function()
+  --     vim.cmd [[colorscheme nightfox]]
+  --   end,
+  -- },
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- Optionally configure and load the colorscheme
+  --     -- directly inside the plugin declaration.
+  --     vim.g.gruvbox_material_enable_italic = false
+  --     vim.g.gruvbox_material_background = 'hard'
+  --     vim.g.gruvbox_material_foreground = 'material'
+  --     vim.cmd.colorscheme 'gruvbox-material'
+  --   end,
+  -- },
+  -- {
+  --   'luisiacc/gruvbox-baby',
+  --   priority = 1000,
+  --   init = function()
+  --     vim.cmd [[colorscheme gruvbox-baby]]
+  --   end,
+  -- },
+
   { -- Tabstyle tabs for buffers
     'akinsho/bufferline.nvim',
     version = '*',

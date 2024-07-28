@@ -17,5 +17,8 @@
 !/.config/shell
 !/.config/bash
 !/.config/zsh
+/.config/zsh/plugins
+!/.config/tmux
+/.config/tmux/plugins
 
 !/.setup

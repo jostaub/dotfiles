@@ -31,7 +31,12 @@ alias ll='ls -lAFh --color'
 alias lt='ls -ltFh --color' # sorted by date
 
 # reload
-alias crload='source ~/.zshrc'
+if [[ "$SHELL" == "/bin/bash" ]]; then
+  alias crload='source ~/.bashrc'
+else
+  alias crload='source ~/.zshrc'
+fi
+
 
 # clear ssh keys
 alias ssh-clean="ssh-add -D"
@@ -49,3 +54,6 @@ alias grep="grep -i"
 # dont accidentally delete files
 alias rm='rm -i'
 alias mv='mv -i'
+
+# tmux management
+alias tps="~/.local/bin/scripts/tmux-session-manager.sh"

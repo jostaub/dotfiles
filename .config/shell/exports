@@ -19,3 +19,6 @@ then
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 fi
+
+# fzf default opts
+export FZF_DEFAULT_OPTS_FILE=~/.config/fzf/config

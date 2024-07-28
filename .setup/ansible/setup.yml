@@ -5,45 +5,57 @@
     ansible_connection: local
 
   tasks:
-    - name: Install basic req.
-      ansible.builtin.package:
-        name:
-          - git
-        state: present
-      become: true
+    # - name: Install basic req.
+    #   ansible.builtin.package:
+    #     name:
+    #       - tmux
+    #       - git
+    #     state: present
+    #   become: true
+    #
+    # - name: Install bash
+    #   ansible.builtin.package:
+    #     name:
+    #       - bash
+    #       - bash-completion
+    #     state: present
+    #   tags:
+    #     - bash
+    #   become: true
+    #
+    # - name: Install zsh
+    #   ansible.builtin.package:
+    #     name:
+    #       - zsh
+    #     state: present
+    #   tags:
+    #     - zsh
+    #     - never
+    #   become: true
+    #
+    # - name: Download FiraMono Nerdfont
+    #   ansible.builtin.get_url:
+    #     url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraMono.zip
+    #     dest: /tmp/FiraMono.zip
+    #     mode: "0440"
+    #
+    # - name: Check if starship promt is installed
+    #   ansible.builtin.stat:
+    #     path: ~/.local/bin/starship
+    #   register: starship
+    #
+    # - name: Install starship prompt
+    #   ansible.builtin.shell:
+    #     cmd: set -o pipefail && curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir ~/.local/bin/ -f
+    #   when: not starship.stat.exists
 
-    - name: Install bash
-      ansible.builtin.package:
-        name:
-          - bash
-          - bash-completion
-        state: present
-      tags:
-        - bash
-      become: true
-
-    - name: Install zsh
-      ansible.builtin.package:
-        name:
-          - zsh
-        state: present
-      tags:
-        - zsh
-        - never
-      become: true
-
-    - name: Download FiraMono Nerdfont
+    - name: Download current fzf
       ansible.builtin.get_url:
-        url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraMono.zip
-        dest: /tmp/FiraMono.zip
+        url: https://github.com/junegunn/fzf/releases/download/0.53.0/fzf-0.53.0-linux_amd64.tar.gz
+        dest: /tmp/fzf.tar.gz
         mode: "0440"
 
-    - name: Check if starship promt is installed
-      ansible.builtin.stat:
-        path: ~/.local/bin/starship
-      register: starship
-
-    - name: Install starship prompt
-      ansible.builtin.shell:
-        cmd: set -o pipefail && curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir ~/.local/bin/ -f
-      when: not starship.stat.exists
+    - name: Extract fzf.tar.gz to local bin
+      ansible.builtin.unarchive:
+        src: /tmp/fzf.tar.gz
+        dest: ~/.local/bin/
