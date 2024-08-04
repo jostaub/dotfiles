@@ -1,17 +1,12 @@
 {
-    "test": {
-        "prefix": "test",
-        "body": "<!Testing html>\n",
-        "description": "HTML - 5.0 (doctype)"
-    },
-    "Ansible name": {
-      "prefix": "name",
-      "body": [
-        "- name: ${1:name}"
-      ],
-      "description": "Simple Ansible task"
-    },
-  "Playbook template": {
+  "name": {
+    "prefix": "name",
+    "body": [
+      "- name: ${1:name}"
+    ],
+    "description": "Simple Ansible task"
+  },
+  "playbook": {
     "prefix": "playbook",
     "body": [
       "---",
@@ -19,8 +14,8 @@
       "  hosts: ${1:hosts}",
       "",
       "  tasks:",
-      "${0:hosts}"
+      "${0:task}"
     ],
-    "description": "Playbook template"
+    "description": "Simple Playbook template"
   }
 }

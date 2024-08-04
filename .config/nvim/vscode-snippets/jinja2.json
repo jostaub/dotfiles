@@ -1,5 +1,5 @@
 {
-    "Jinja for loop": {
+    "jinja for loop": {
         "prefix": "jfor",
         "body": [
             "{% for $1 in $2 %}",
@@ -9,7 +9,7 @@
         "description": "Jinja for loop"
     },
 
-    "Jinja if": {
+    "jinja if": {
         "prefix": "jif",
         "body": [
             "{% if $1 %}",
@@ -19,7 +19,7 @@
         "description": "Jinja if"
     },
 
-    "Jinja if else": {
+    "jinja if else": {
         "prefix": "jifelse",
         "body": [
             "{% if $1 %}",

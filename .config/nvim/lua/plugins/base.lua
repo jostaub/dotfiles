@@ -284,10 +284,6 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        bashls = {},
-        gopls = {},
-        pyright = {},
-        clangd = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -302,18 +298,26 @@ return {
             },
           },
         },
+        bashls = {},
+        pyright = {},
         ansiblels = {},
       }
-
-      if lsp_servers_overrides then
-        servers = lsp_servers_overrides()
-      end
 
       -- install autoformatters with mason
       local autoformatters = {
         'prettier',
         'ruff',
       }
+
+      if NVIM_PLUGINENV == 'work' or NVIM_PLUGINENV == nil then
+        -- currently nothing special for work
+      elseif NVIM_PLUGINENV == 'personal' then
+        local personal_servers = {}
+        local personal_formatters = {}
+
+        vim.tbl_extend('force', servers, personal_servers)
+        vim.tbl_extend('force', autoformatters, personal_formatters)
+      end
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
