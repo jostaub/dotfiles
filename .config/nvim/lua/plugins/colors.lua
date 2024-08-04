@@ -1,0 +1,156 @@
+return {
+  -- {
+  --   'jostaub/rose-pine.nvim',
+  --   branch = 'feat/palette-override',
+  --   name = 'rose-pine',
+  --   config = function()
+  --     require('rose-pine').setup {
+  --       disable_background = false,
+  --       styles = {
+  --         italic = false, -- to much italic in general
+  --       },
+  --
+  --       palette = {
+  --         moon = {
+  --           base = '#18191a',
+  --           surface = '#18191a',
+  --           overlay = '#363738',
+  --           love = '#d2788c',
+  --           gold = '#d2a374',
+  --           rose = '#be8c8c',
+  --           pine = '#7894ab',
+  --           foam = '#a1b3b9',
+  --           iris = '#b9a3ba',
+  --         },
+  --       },
+  --
+  --       highlight_groups = {
+  --         Comment = { italic = true },
+  --       },
+  --     }
+  --
+  --     vim.cmd.colorscheme 'rose-pine-moon'
+  --     -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  --     -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+  --   end,
+  -- },
+  {
+    'sainnhe/gruvbox-material',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = false
+      vim.g.gruvbox_material_background = 'hard'
+      vim.g.gruvbox_material_foreground = 'material'
+      vim.cmd.colorscheme 'gruvbox-material'
+    end,
+  },
+  -- { -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  --   'folke/tokyonight.nvim',
+  --   priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   init = function()
+  --     -- Load the colorscheme here.
+  --     -- Like many other themes, this one has different styles, and you could load
+  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+  --     vim.cmd.colorscheme 'tokyonight-night'
+  --
+  --     -- You can configure highlights by doing something like:
+  --     vim.cmd.hi 'Comment gui=none'
+  --   end,
+  -- },
+  -- {
+  --   'ellisonleao/gruvbox.nvim',
+  --   priority = 1000,
+  --   config = true,
+  --   opts = {
+  --     italic = {
+  --       strings = true,
+  --       emphasis = true,
+  --       comments = true,
+  --       operators = true,
+  --       folds = false,
+  --     },
+  --     contrast = '',
+  --   },
+  --   init = function()
+  --     vim.o.background = 'dark'
+  --     vim.cmd [[colorscheme gruvbox]]
+  --   end,
+  -- },
+  -- {
+  --   'rebelot/kanagawa.nvim',
+  --   priority = 1000,
+  --   config = true,
+  --   opts = {
+  --     keywordStyle = { italic = false },
+  --     colors = {
+  --       palette = {
+  --         -- oniViolet = '#B39DF3',
+  --       },
+  --     },
+  --     overrides = function(colors) -- add/modify highlights
+  --       local theme = colors.theme
+  --       return {
+  --         ['@keyword.operator'] = { fg = colors.palette.autumnYellow },
+  --         ['@variable.builtin'] = { italic = false },
+  --       }
+  --     end,
+  --   },
+  --   init = function()
+  --     vim.cmd [[colorscheme kanagawa]]
+  --   end,
+  -- },
+  -- {
+  --   'EdenEast/nightfox.nvim',
+  --   priority = 1000,
+  --   init = function()
+  --     vim.cmd [[colorscheme nightfox]]
+  --   end,
+  -- },
+  -- {
+  --   'luisiacc/gruvbox-baby',
+  --   priority = 1000,
+  --   init = function()
+  --     vim.cmd [[colorscheme gruvbox-baby]]
+  --   end,
+  -- },
+  -- {
+  --   'sainnhe/sonokai',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- Optionally configure and load the colorscheme
+  --     -- directly inside the plugin declaration.
+  --     vim.g.sonokai_enable_italic = true
+  --     vim.cmd.colorscheme 'sonokai'
+  --   end,
+  -- },
+  -- {
+  --   'navarasu/onedark.nvim',
+  --   config = {
+  --     style = 'darker',
+  --   },
+  --   init = function()
+  --     vim.cmd [[colorscheme onedark]]
+  --   end,
+  -- },
+  -- {
+  --   'rmehri01/onenord.nvim',
+  --   init = function()
+  --     vim.cmd [[colorscheme onenord]]
+  --   end,
+  -- },
+  -- {
+  --   'catppuccin/nvim',
+  --   name = 'catppuccin',
+  --   priority = 1000,
+  --   config = {
+  --     flavour = 'macchiato',
+  --   },
+  --   init = function()
+  --     vim.cmd [[colorscheme catppuccin]]
+  --   end,
+  -- },
+}
