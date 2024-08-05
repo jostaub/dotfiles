@@ -20,5 +20,6 @@
 /.config/zsh/plugins
 !/.config/tmux
 /.config/tmux/plugins
+!/.config/fzf
 
 !/.setup

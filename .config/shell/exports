@@ -21,4 +21,4 @@ then
 fi
 
 # fzf default opts
-export FZF_DEFAULT_OPTS_FILE=~/.config/fzf/config
+export FZF_DEFAULT_OPTS_FILE=~/.config/fzf/default_opts
