@@ -4,6 +4,12 @@ export COLORTERM="truecolor"
 # set editor
 export EDITOR=vim
 
+# set enviroment to personal if needed
+if [ -f "$HOME/.personalenv" ]; then
+    export NVIM_CONFIGENV="personal" 
+else
+    export NVIM_CONFIGENV="work" 
+fi
 
 # update path
 [ -d "/snap/bin" ] && export PATH=$PATH:/snap/bin

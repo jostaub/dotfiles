@@ -309,9 +309,9 @@ return {
         'ruff',
       }
 
-      if NVIM_PLUGINENV == 'work' or NVIM_PLUGINENV == nil then
+      if NVIM_CONFIGENV == 'work' then
         -- currently nothing special for work
-      elseif NVIM_PLUGINENV == 'personal' then
+      elseif NVIM_CONFIGENV == 'personal' then
         local personal_servers = {}
         local personal_formatters = {}
 

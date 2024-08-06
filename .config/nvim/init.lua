@@ -1,10 +1,10 @@
+-- [[ Global vars used here and there ]]
+NVIM_CONFIGENV = os.getenv 'NVIM_CONFIGENV' or 'work' -- possible values: work, personal
+
 require 'config.options'
 require 'config.keymaps'
 require 'config.autocmds'
 require 'config.helpers'
-
--- [[ Global vars used here and there]]
-NVIM_PLUGINENV = os.getenv 'NVIM_PLUGINENV' -- possible values: work, personal or nil
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -24,8 +24,6 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  To update plugins you can run
 --    :Lazy update
---
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- Import my plugins
   { import = 'plugins' },
