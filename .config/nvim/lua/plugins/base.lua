@@ -310,9 +310,11 @@ return {
       }
 
       if NVIM_CONFIGENV == 'work' then
-        -- currently nothing special for work
+        -- currently nothing special only for work
       elseif NVIM_CONFIGENV == 'personal' then
-        local personal_servers = {}
+        local personal_servers = {
+          gopls = {},
+        }
         local personal_formatters = {}
 
         vim.tbl_extend('force', servers, personal_servers)
@@ -393,6 +395,7 @@ return {
         python = { 'ruff_organize_imports', 'ruff_format' },
         go = { 'gofmt' },
         javascript = { 'prettier' },
+        html = { 'prettier' },
         yaml = { 'prettier' },
         ['yaml.ansible'] = { 'prettier' },
       },
