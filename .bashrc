@@ -16,7 +16,7 @@ export PATH
 
 
 # load device specific config
-[ -f "~/.config/shell/host_specific" ] && source ~/.config/shell/host_specific
+[ -f ~/.config/shell/host_specific ] && source ~/.config/shell/host_specific
 
 source "$HOME/.config/shell/exports"
 source "$HOME/.config/shell/aliasrc"

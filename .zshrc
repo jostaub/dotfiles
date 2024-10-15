@@ -8,7 +8,7 @@ if [ ! -d "$HOME/.config/zsh/plugins/zsh-syntax-highlighting" ]; then
 fi
 
 # load host specific config
-[ -f "~/.config/shell/host_specific" ] && source ~/.config/shell/host_specific
+[ -f ~/.config/shell/host_specific ] && source ~/.config/shell/host_specific
 
 # general stuff
 source ~/.config/zsh/general
