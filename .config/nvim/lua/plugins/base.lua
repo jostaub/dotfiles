@@ -314,11 +314,12 @@ return {
       elseif NVIM_CONFIGENV == 'personal' then
         local personal_servers = {
           gopls = {},
+          zls = {}, -- zig
         }
         local personal_formatters = {}
 
-        vim.tbl_extend('force', servers, personal_servers)
-        vim.tbl_extend('force', autoformatters, personal_formatters)
+        servers = vim.tbl_extend('force', servers, personal_servers)
+        autoformatters = vim.tbl_extend('force', autoformatters, personal_formatters)
       end
 
       -- Ensure the servers and tools above are installed
@@ -338,7 +339,6 @@ return {
       vim.list_extend(ensure_installed, autoformatters)
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
@@ -393,11 +393,13 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'ruff_organize_imports', 'ruff_format' },
-        go = { 'gofmt' },
         javascript = { 'prettier' },
         html = { 'prettier' },
         yaml = { 'prettier' },
         ['yaml.ansible'] = { 'prettier' },
+        -- personal formatter setup
+        go = { 'gofmt' },
+        zig = { 'zigfmt' },
       },
     },
   },

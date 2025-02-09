@@ -36,3 +36,4 @@ fi
 if [ -f ~/.local/bin/starship ]; then
   eval "$(starship init bash)"
 fi
+
